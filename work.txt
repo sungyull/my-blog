@@ -1,0 +1,89 @@
+Django Girl's Tutorial.... (My First Blog)
+
+- 개발환경
+  Python 3.6, Django, Git
+  Python 3.6 다운 및 설치
+
+- venv 환경실행 :  
+  D:\WSHOME>python -m venv myvenv
+  D:\WSHOME> myenv\Scripts\activate
+  (myvenv) (base) D:\WSHOME>
+
+- pip upgrade 
+  (myvenv) (base) D:\WSHOME>python -m pip install --upgrade pip
+
+- Django install
+  (myvenv) (base) D:\WSHOME>pip install django~=1.11.0 
+
+- 웹서서 설정 변경( mysite/settings.py)
+  TIME_ZONE = 'Asia/Seoul'
+  STATIC_URL = '/static/'
+  STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+  ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
+
+- mysite 데이터베이스(sqllite) 생성
+  (myvenv) (base) D:\WSHOME>python manage.py migrate
+  => db.sqlite3 생성 확인
+
+- Django 웹서버 실행
+  (myvenv) (base) D:\WSHOME> python manage.py runserver
+
+- MySite Application 만들기... (Blog)
+  (myvenv) (base) D:\WSHOME\blog>python manage.py startapp blog
+  mysite/settings.py 에 APP 추가 INSTALLED_APPS = [ ...,  'blog', ]
+
+- Blog Model 생성 후 makemigrations > migrate
+  (myvenv) (base) D:\WSHOME>python manage.py makemigrations blog
+  (myvenv) (base) D:\WSHOME>python manage.py migrate blog
+
+- 슈퍼 사용자(superuser) 생성
+  (myvenv) (base) D:\WSHOME>python manage.py createsuperuser
+
+- 배포환경
+  GIT 다운, 설치 : https://git-scm.com/
+  https://github.com/
+  https://www.pythonanywhere.com/user/sungyull/ jungle30!
+
+- DJango mysite project 시작, 
+  (myvenv) (base) D:\WSHOME>python .\myvenv\Scripts\django-admin.py startproject mysite .
+
+ - 관리자 생성
+  python manage.py createsuperuser
+
+============================>
+- Git 저장소 만들기
+$ git init
+Initialized empty Git repository in ~/djangogirls/.git/
+$ git config --global user.name "Your Name"
+$ git config --global user.email you@example.com
+$ .gitignore 파일 생성
+$ git status
+$ git add --all .
+$ git commit -m "My Django Girls app, first commit"
+
+$ git remote add origin https://github.com/sungyull/my-first-blog.git
+$ git push -u origin master
+
+$ git clone https://github.com/sungyull/my-first-blog.git
+
+local > Git 
+$ git status
+$ git add --all .
+$ git commit -m "memo...."
+$ git push
+
+Git > PythonAnywhere
+$ git pull
+
+
+
+
+
+
+
+
+
+
+
+
+
