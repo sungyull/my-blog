@@ -86,6 +86,16 @@ Django Girl's Tutorial.... (My First Blog)
 - PythonAnywhere에서 데이터베이스 생성
   (myvenv) 07:03 ~/my-blog (master)$ python manage.py migrate
 
+- PythonAnywhere에서 데이터베이스 슈퍼유저 생성
+(myvenv) 09:31 ~/my-blog (master)$ python manage.py createsuperuser
+
+- PythonAnywhere에서 WEB > Add a new web app 으로 설정.
+  실행 디렉토리 설정하고, WSGI 파일 셋팅하고.(<your-username>_pythonanywhere_com_wsgi.py)
+  Reload 하면 배포 완료..
+
+
+.
+
 
 
 
