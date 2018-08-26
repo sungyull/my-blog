@@ -94,11 +94,7 @@ Django Girl's Tutorial.... (My First Blog)
   Reload 하면 배포 완료..
 
 
-.
-
-
-
-
+- 변경파일 배포 순서 
 local > Git 
 $ git status
 $ git add --all .
