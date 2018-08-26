@@ -50,21 +50,44 @@ Django Girl's Tutorial.... (My First Blog)
  - 관리자 생성
   python manage.py createsuperuser
 
-============================>
 - Git 저장소 만들기
-$ git init
-Initialized empty Git repository in ~/djangogirls/.git/
-$ git config --global user.name "Your Name"
-$ git config --global user.email you@example.com
-$ .gitignore 파일 생성
-$ git status
-$ git add --all .
-$ git commit -m "My Django Girls app, first commit"
+  (myvenv) (base) D:\WSHOME>git init
+  Initialized empty Git repository in D:/WSHOME/.git/
 
-$ git remote add origin https://github.com/sungyull/my-first-blog.git
-$ git push -u origin master
+- .gitignore 파일 생성
+  *.pyc
+  *~
+  __pycache__
+  myvenv
+  db.sqlite3
+  /static
+  .DS_Store
 
-$ git clone https://github.com/sungyull/my-first-blog.git
+- Git 저장소 넣기
+  (myvenv) (base) D:\WSHOME>git status
+  (myvenv) (base) D:\WSHOME>git add --all .
+  (myvenv) (base) D:\WSHOME>git commit -m "Django 2nd app, first commit"
+
+- GitHub 코드 배포 (GitHub 에 로그인 후 저장소 만들어 놓기)
+  (https://github.com/sungyull/my-blog.git)
+
+  (myvenv) (base) D:\WSHOME>git remote add origin https://github.com/sungyull/my-blog.git
+  (myvenv) (base) D:\WSHOME>git push -u origin master
+
+- PythonAnywhere 가입 "콘솔(Consoles)"  > "배시(Bash)" 사용
+- GitHub(my-blog) 에서 PythonAnywhere 로 소스 복사
+  $ git clone https://github.com/sungyull/my-blog.git
+
+- PythonAnywhere에서 virtualenv 생성, python3.6, Django 설치
+  $ virtualenv --python=python3.6 myvenv
+  $ source myvenv/bin/activate
+  (myvenv) $  pip install django~=1.11.0
+
+- PythonAnywhere에서 데이터베이스 생성
+  (myvenv) 07:03 ~/my-blog (master)$ python manage.py migrate
+
+
+
 
 local > Git 
 $ git status
